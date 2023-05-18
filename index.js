@@ -20,10 +20,11 @@ function main() {
     const ulUsers = document.createElement("ul");
     
    
-    users.forEach((user) => {
+    users.forEach((users) => {
       const li = document.createElement("li");
-      li.textContent = user.name;
+      li.textContent = `Freelancer Name: ${users.name} Age: ${users.age} Occupation: ${users.occupation}`;
       ulUsers.appendChild(li);
+      
     });
    
     document.body.appendChild(ulUsers);
@@ -32,6 +33,20 @@ function main() {
 //call the main function
 main();
 
-const root = document.querySelector('.root');
-root.style.backgroundColor = 'yellow';
-root.style.color = 'red';
+const style = document.createElement('style');
+style.innerHTML = `
+      body {
+        background-color: #89b2f5;
+             }
+
+      h1 {
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      li + li {
+        margin-top: 1rem;
+      }
+
+    `;
+document.head.appendChild(style);
